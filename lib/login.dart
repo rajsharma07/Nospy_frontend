@@ -1,16 +1,29 @@
-
 import 'package:flutter/material.dart';
 
-class LogIn extends StatelessWidget{
-  LogIn({super.key});
+class Login extends StatelessWidget {
+  const Login({super.key});
   @override
-  Widget build(BuildContext context){
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Text('Welcome to NoSpy'),
-        
-      ],
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Center(
+          child: Text("NoSpy"),
+        ),
+      ),
+      body: Column(
+        children: [
+          TextFormField(),
+          TextFormField(),
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text("Login"),
+          ),
+          TextButton(
+            onPressed: () {},
+            child: const Text("Register"),
+          )
+        ],
+      ),
     );
   }
 }
