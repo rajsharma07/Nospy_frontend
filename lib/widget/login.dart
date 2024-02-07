@@ -1,5 +1,7 @@
+
+
 import 'package:flutter/material.dart';
-import 'package:nospy/register.dart';
+import 'package:nospy/widget/register.dart';
 
 class Login extends StatefulWidget {
   const Login(this.changepage, {super.key});
@@ -11,6 +13,10 @@ class Login extends StatefulWidget {
 }
 
 class _Login extends State<Login> {
+
+  void loginapi(){
+    //api call
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,16 +35,29 @@ class _Login extends State<Login> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TextFormField(),
+              const TextField(
+              
+                decoration: InputDecoration(
+                  label: Text('Email'),
+                  hintText: 'Email',
+                ),
+              ),
               const SizedBox(
                 height: 20,
               ),
-              TextFormField(),
+              const TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  label: Text('Passcode'),
+                  hintText: 'Passcode',
+                
+                ),
+              ),
               const SizedBox(
                 height: 50,
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: loginapi,
                 child: const Text("Login"),
               ),
               const SizedBox(

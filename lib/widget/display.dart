@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nospy/login.dart';
+import 'package:nospy/widget/home.dart';
+import 'package:nospy/widget/login.dart';
 
 class Display extends StatefulWidget{
   Display({super.key});
@@ -18,6 +19,7 @@ class _Display extends State<Display>{
   }
   void changepage(Widget tochange){
     setState(() {
+      print('object');
       currentpage = tochange;
     });
   }
@@ -25,9 +27,8 @@ class _Display extends State<Display>{
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      home: Container(
-        child: currentpage,
-      ),
+      debugShowCheckedModeBanner: false,
+      home: currentpage,
     );
   }
 }
