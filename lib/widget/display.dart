@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nospy/widget/chatpage/chat_page.dart';
 import 'package:nospy/widget/home.dart';
 import 'package:nospy/widget/login.dart';
 
@@ -19,7 +20,6 @@ class _Display extends State<Display>{
   }
   void changepage(Widget tochange){
     setState(() {
-      print('object');
       currentpage = tochange;
     });
   }
@@ -28,7 +28,7 @@ class _Display extends State<Display>{
   Widget build(BuildContext context){
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: currentpage,
+      home: ChatPage(),
     );
   }
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nospy/widget/login.dart';
+import 'package:http/http.dart' as http;
+import 'package:nospy/api_methods/api_call.dart';
 
 class Register extends StatefulWidget {
   const Register(this.changepage, {super.key});
@@ -11,8 +13,18 @@ class Register extends StatefulWidget {
 }
 
 class _Register extends State<Register> {
-  void registerapi(){
-    //register api call
+  TextEditingController namecontroler = TextEditingController();
+  TextEditingController emailcontroler = TextEditingController();
+  TextEditingController passcodecontroler = TextEditingController();
+
+  void registerapi()async{
+    Map<String, String>js = {
+      'name': namecontroler.text,
+      'email':emailcontroler.text,
+      'password':passcodecontroler.text
+    };
+    http.Response response = await ApiCall().postReq(js, "address");
+
   }
 
   @override

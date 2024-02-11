@@ -8,31 +8,41 @@ class TeamDashboardDisplay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     member = teamdata['member'];
-    return Column(
-      children: [
-        Row(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Text(
-                teamdata['name'],
-                style: const TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
+    return Card(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: TextButton(
+                  onPressed: (){},
+                  child: Text(
+                    teamdata['name'],
+                    style: const TextStyle(
+                      fontSize: 30,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               ),
-            ),
-            ...member.map(
-              (e) {
-                return CircleAvatar(
-                  backgroundImage: AssetImage(e),
-                  maxRadius: 20,
-                );
-              },
-            )
-          ],
-        )
-      ],
+              ...member.map(
+                (e) {
+                  return CircleAvatar(
+                    backgroundImage: AssetImage(e),
+                    maxRadius: 20,
+                  );
+                },
+              )
+            ],
+          ),
+          Text(
+            teamdata!['discription'],
+          )
+        ],
+      ),
     );
   }
 }

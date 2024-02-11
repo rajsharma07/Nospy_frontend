@@ -1,7 +1,7 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:nospy/widget/register.dart';
+import 'package:nospy/api_methods/api_call.dart';
+import 'package:http/http.dart' as http;
 
 class Login extends StatefulWidget {
   const Login(this.changepage, {super.key});
@@ -11,12 +11,24 @@ class Login extends StatefulWidget {
     return _Login();
   }
 }
-
 class _Login extends State<Login> {
+  var emailcontroler =  TextEditingController();
+  var passcodecontroler = TextEditingController();
+  void loginapi()async{
+    Map<String, String>js = {
+      'email': emailcontroler.text,
+      'password': passcodecontroler.text
+    };
+    http.Response response = await ApiCall().postReq(js, "address");
 
-  void loginapi(){
-    //api call
   }
+  @override
+  void dispose() {
+    emailcontroler.dispose();
+    passcodecontroler.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,9 +47,9 @@ class _Login extends State<Login> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const TextField(
-              
-                decoration: InputDecoration(
+               TextField(
+                controller: emailcontroler,
+                decoration: const InputDecoration(
                   label: Text('Email'),
                   hintText: 'Email',
                 ),
@@ -45,12 +57,12 @@ class _Login extends State<Login> {
               const SizedBox(
                 height: 20,
               ),
-              const TextField(
+               TextField(
+                controller: passcodecontroler,
                 obscureText: true,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   label: Text('Passcode'),
                   hintText: 'Passcode',
-                
                 ),
               ),
               const SizedBox(
