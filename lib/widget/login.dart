@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:nospy/widget/nospy.dart';
 import 'package:nospy/widget/register.dart';
 import 'package:nospy/api_methods/api_call.dart';
 import 'package:http/http.dart' as http;
@@ -11,17 +14,32 @@ class Login extends StatefulWidget {
     return _Login();
   }
 }
+
 class _Login extends State<Login> {
-  var emailcontroler =  TextEditingController();
+  var emailcontroler = TextEditingController();
   var passcodecontroler = TextEditingController();
-  void loginapi()async{
-    Map<String, String>js = {
+  var namecontroller = TextEditingController();
+  void loginapi() async {
+    Map<String, String> js = {
+      'name': namecontroller.text,
       'email': emailcontroler.text,
       'password': passcodecontroler.text
     };
-    http.Response response = await ApiCall().postReq(js, "address");
-
+    print(js);
+    http.Response response = await ApiCall().postReq(js, '/api/v1/auth/login');
+    String decodedResponse = response.body;
+    Map<String, dynamic> m = jsonDecode(decodedResponse);
+    print(m);
+    if (response.statusCode == 200) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const NoSpy(),
+        ),
+      );
+    }
   }
+
   @override
   void dispose() {
     emailcontroler.dispose();
@@ -32,10 +50,8 @@ class _Login extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 203, 187, 231),
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
-        foregroundColor: const Color.fromARGB(255, 220, 202, 250),
         title: const Center(
           child: Text("NoSpy"),
         ),
@@ -47,7 +63,17 @@ class _Login extends State<Login> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-               TextField(
+              TextField(
+                controller: namecontroller,
+                decoration: const InputDecoration(
+                  label: Text('Name'),
+                  hintText: 'Name',
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              TextField(
                 controller: emailcontroler,
                 decoration: const InputDecoration(
                   label: Text('Email'),
@@ -57,7 +83,7 @@ class _Login extends State<Login> {
               const SizedBox(
                 height: 20,
               ),
-               TextField(
+              TextField(
                 controller: passcodecontroler,
                 obscureText: true,
                 decoration: const InputDecoration(

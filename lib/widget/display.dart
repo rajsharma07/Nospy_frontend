@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:nospy/widget/chatpage/chat_page.dart';
-import 'package:nospy/widget/home.dart';
+// import 'package:nospy/widget/chatpage/chat_page.dart';
+// import 'package:nospy/widget/nospy.dart';
 import 'package:nospy/widget/login.dart';
+import 'package:nospy/widget/nospy.dart';
 
 class Display extends StatefulWidget{
-  Display({super.key});
+  const Display({super.key});
   @override
   State<Display> createState(){
     return _Display();
@@ -28,7 +29,7 @@ class _Display extends State<Display>{
   Widget build(BuildContext context){
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ChatPage(),
+      home: NoSpy(),
     );
   }
 }

@@ -23,6 +23,10 @@ class DrawerWidget extends StatelessWidget {
             title: Text('Teams'),
           ),
           ListTile(
+            leading: Icon(Icons.group_add),
+            title: Text("Make your team"),
+          ),
+          ListTile(
             leading: Icon(Icons.logout),
             title: Text('Logout'),
           ),
