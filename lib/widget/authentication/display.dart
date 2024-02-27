@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:nospy/widget/chatpage/chat_page.dart';
 // import 'package:nospy/widget/nospy.dart';
-import 'package:nospy/widget/login.dart';
+import 'package:nospy/widget/authentication/login.dart';
 import 'package:nospy/widget/nospy.dart';
 
 class Display extends StatefulWidget{

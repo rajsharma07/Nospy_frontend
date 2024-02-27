@@ -6,11 +6,9 @@ class ApiCall {
   ApiCall();
   Future<http.Response> postReq(Map<String, String> js, String address) async {
     String url = basic + address;
-    print(js);
     http.Response response;
     response = await http.post(
       Uri.parse(url),
-      
       headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },

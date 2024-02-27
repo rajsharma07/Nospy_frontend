@@ -1,0 +1,107 @@
+[
+    {
+      "id": "1",
+      "title": "Complete Project Proposal",
+      "description": "Draft a detailed project proposal including scope, timeline, and resources required.",
+      "date": "2024-02-25",
+      "status": false
+    },
+    {
+      "id": "2",
+      "title": "Review Code Changes",
+      "description": "Review recent code changes and provide feedback on areas of improvement.",
+      "date": "2024-02-26",
+      "status": false
+    },
+    {
+      "id": "3",
+      "title": "Prepare Presentation Slides",
+      "description": "Create slides for the upcoming client presentation summarizing project progress and milestones.",
+      "date": "2024-02-28",
+      "status": false
+    },
+    {
+      "id": "4",
+      "title": "Conduct User Interviews",
+      "description": "Schedule and conduct user interviews to gather feedback on the current product.",
+      "date": "2024-03-02",
+      "status": false
+    },
+    {
+      "id": "5",
+      "title": "Refactor Legacy Code",
+      "description": "Refactor legacy codebase to improve maintainability and performance.",
+      "date": "2024-03-05",
+      "status": false
+    },
+    {
+      "id": "6",
+      "title": "Create Marketing Campaign",
+      "description": "Develop a marketing campaign to promote the new product launch.",
+      "date": "2024-03-07",
+      "status": false
+    },
+    {
+      "id": "7",
+      "title": "Test New Feature Set",
+      "description": "Execute comprehensive testing of the newly developed feature set.",
+      "date": "2024-03-10",
+      "status": false
+    },
+    {
+      "id": "8",
+      "title": "Finalize Budget Report",
+      "description": "Compile and finalize the budget report for the next fiscal quarter.",
+      "date": "2024-03-12",
+      "status": false
+    },
+    {
+      "id": "9",
+      "title": "Onboard New Hire",
+      "description": "Facilitate the onboarding process for the newly hired team member.",
+      "date": "2024-03-15",
+      "status": false
+    },
+    {
+      "id": "10",
+      "title": "Coordinate Team Retreat",
+      "description": "Organize logistics and activities for the upcoming team retreat.",
+      "date": "2024-03-18",
+      "status": false
+    },
+    {
+      "id": "11",
+      "title": "Update Documentation",
+      "description": "Review and update project documentation to reflect recent changes.",
+      "date": "2024-03-20",
+      "status": false
+    },
+    {
+      "id": "12",
+      "title": "Deploy Software Update",
+      "description": "Plan and execute deployment of the latest software update to production servers.",
+      "date": "2024-03-22",
+      "status": false
+    },
+    {
+      "id": "13",
+      "title": "Conduct Performance Reviews",
+      "description": "Conduct performance reviews for team members and provide constructive feedback.",
+      "date": "2024-03-25",
+      "status": false
+    },
+    {
+      "id": "14",
+      "title": "Research New Technologies",
+      "description": "Explore emerging technologies relevant to the project and assess their potential impact.",
+      "date": "2024-03-28",
+      "status": false
+    },
+    {
+      "id": "15",
+      "title": "Prepare Quarterly Report",
+      "description": "Compile data and insights to create the quarterly report for stakeholders.",
+      "date": "2024-03-31",
+      "status": false
+    }
+  ]

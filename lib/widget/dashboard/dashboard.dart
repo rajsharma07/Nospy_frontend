@@ -15,7 +15,7 @@ class _DashBoard extends State<DashBoard> {
   List teamsdata = [];
   Future jsonconverting() async {
     String jsonstring =
-        await DefaultAssetBundle.of(context).loadString("lib/data/teams.json");
+        await DefaultAssetBundle.of(context).loadString("assets/data/teams.json");
     dynamic jsondata = jsonDecode(jsonstring);
     setState(() {
       teamsdata = jsondata;
@@ -36,9 +36,11 @@ class _DashBoard extends State<DashBoard> {
           title: Text("Teams"),
         ),
         teamsdata.isNotEmpty
-            ? Column(children: teamsdata.map(
-                (e) => TeamDashboardDisplay(e, e['member']),
-              ).toList())
+            ? SingleChildScrollView(
+              child: Column(children: teamsdata.map(
+                  (e) => TeamDashboardDisplay(e, e['member']),
+                ).toList()),
+            )
               : const Text("no data")
       ],
     );

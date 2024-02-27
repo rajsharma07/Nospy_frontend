@@ -2,9 +2,10 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:nospy/widget/nospy.dart';
-import 'package:nospy/widget/register.dart';
+import 'package:nospy/widget/authentication/register.dart';
 import 'package:nospy/api_methods/api_call.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Login extends StatefulWidget {
   const Login(this.changepage, {super.key});
@@ -19,24 +20,45 @@ class _Login extends State<Login> {
   var emailcontroler = TextEditingController();
   var passcodecontroler = TextEditingController();
   var namecontroller = TextEditingController();
-  void loginapi() async {
-    Map<String, String> js = {
-      'name': namecontroller.text,
-      'email': emailcontroler.text,
-      'password': passcodecontroler.text
-    };
-    print(js);
-    http.Response response = await ApiCall().postReq(js, '/api/v1/auth/login');
-    String decodedResponse = response.body;
-    Map<String, dynamic> m = jsonDecode(decodedResponse);
-    print(m);
-    if (response.statusCode == 200) {
-      Navigator.pushReplacement(
+
+  void alertbox() {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) => AlertDialog(
+              title: const Text('Wrong Credential'),
+              content: const Text('Check your credentials!!!'),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.of(context).pop(),
+                  child: const Text('Ok'),
+                )
+              ],
+            ));
+  }
+
+  void enterApp(){
+    Navigator.pushReplacement(
         context,
         MaterialPageRoute(
           builder: (context) => const NoSpy(),
         ),
       );
+  }
+
+  void loginapi() async {
+    final pref = await SharedPreferences.getInstance();
+    Map<String, String> js = {
+      'name': namecontroller.text,
+      'email': emailcontroler.text,
+      'password': passcodecontroler.text
+    };
+    http.Response response = await ApiCall().postReq(js, '/api/v1/auth/login');
+    Map<String, dynamic> m = jsonDecode(response.body);
+    if (response.statusCode == 200) {
+      pref.setString('jwt_token', m['token']);
+      enterApp();
+    } else {
+      alertbox();
     }
   }
 

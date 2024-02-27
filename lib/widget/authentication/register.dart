@@ -1,10 +1,11 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:nospy/widget/login.dart';
+import 'package:nospy/widget/authentication/login.dart';
 import 'package:nospy/widget/nospy.dart';
 import 'package:http/http.dart' as http;
 import 'package:nospy/api_methods/api_call.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Register extends StatefulWidget {
   const Register(this.changepage, {super.key});
@@ -20,22 +21,28 @@ class _Register extends State<Register> {
   var emailcontroler = TextEditingController();
   var passcodecontroler = TextEditingController();
 
+  void enterApp(){
+    Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const NoSpy(),
+        ),
+      );
+  }
+
   void registerapi() async {
     Map<String, String> js = {
       'name': namecontroler.text,
       'email': emailcontroler.text,
       'password': passcodecontroler.text
     };
+    final pref = await SharedPreferences.getInstance();
     http.Response response =
         await ApiCall().postReq(js, '/api/v1/auth/register');
-    String decodedResponse = response.body;
-
-    Map<String, dynamic> m = jsonDecode(decodedResponse);
+    Map<String, dynamic> m = jsonDecode(response.body);
     if (response.statusCode == 200) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const NoSpy()),
-      );
+      enterApp();
+      pref.setString('jwt_token', m['token']);
     }
   }
 
@@ -61,13 +68,13 @@ class _Register extends State<Register> {
               ),
               TextField(
                 controller: namecontroler,
-                decoration:
-                    const InputDecoration(label: Text('Name'), hintText: 'Name'),
+                decoration: const InputDecoration(
+                    label: Text('Name'), hintText: 'Name'),
               ),
               TextField(
                 controller: emailcontroler,
-                decoration:
-                    const InputDecoration(label: Text('EmailId'), hintText: 'Email'),
+                decoration: const InputDecoration(
+                    label: Text('EmailId'), hintText: 'Email'),
               ),
               TextField(
                 controller: passcodecontroler,
