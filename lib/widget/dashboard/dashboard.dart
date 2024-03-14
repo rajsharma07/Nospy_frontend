@@ -31,13 +31,17 @@ class _DashBoard extends State<DashBoard> {
   @override
   Widget build(BuildContext context) {
     return ListView(
+
       children: [
         const ListTile(
           title: Text("Teams"),
         ),
         teamsdata.isNotEmpty
             ? SingleChildScrollView(
-              child: Column(children: teamsdata.map(
+              
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: teamsdata.map(
                   (e) => TeamDashboardDisplay(e, e['member']),
                 ).toList()),
             )

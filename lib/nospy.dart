@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nospy/widget/addteam/create_team.dart';
-import 'package:nospy/widget/chatpage/chat_page.dart';
+import 'package:nospy/widget/chatapp/chatApp.dart';
 import 'package:nospy/widget/dashboard/dashboard.dart';
 import 'package:nospy/widget/drawer/drawerwidget.dart';
 import 'package:nospy/widget/home/home.dart';
@@ -23,7 +23,7 @@ class _NoSpy extends State<NoSpy> {
       activePage = const Home();
     }
     else if(i == 1){
-      activePage = ChatPage();
+      activePage = ChatApp();
     }
     else if(i == 2){
       activePage = CreateTeam();

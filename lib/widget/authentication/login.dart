@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:nospy/widget/nospy.dart';
+import 'package:nospy/nospy.dart';
 import 'package:nospy/widget/authentication/register.dart';
 import 'package:nospy/api_methods/api_call.dart';
 import 'package:http/http.dart' as http;

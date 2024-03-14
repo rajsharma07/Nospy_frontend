@@ -1,41 +1,48 @@
 import 'package:flutter/material.dart';
+import 'package:nospy/widget/settingPage/setting.dart';
 
 class DrawerWidget extends StatelessWidget {
   DrawerWidget({super.key});
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      
       child: ListView(
-        children: const [
-          UserAccountsDrawerHeader(
+        children: [
+          const UserAccountsDrawerHeader(
             currentAccountPicture: CircleAvatar(
               child: Icon(Icons.person),
             ),
-            accountName: Text("Tatte Idli"),
-            accountEmail: Text('Idli@tatte.com'),
+            accountName: Text("NoSpy"),
+            accountEmail: Text('spy@nospy.com'),
           ),
-          ListTile(
+          const ListTile(
             leading: Icon(Icons.home),
             title: Text('Home'),
           ),
-          ListTile(
+          const ListTile(
             leading: Icon(Icons.group),
             title: Text('Teams'),
           ),
-          ListTile(
+          const ListTile(
             leading: Icon(Icons.group_add),
             title: Text("Make your team"),
           ),
-          ListTile(
+          const ListTile(
             leading: Icon(Icons.logout),
             title: Text('Logout'),
           ),
           ListTile(
-            leading: Icon(Icons.settings),
-            title: Text("Setting"),
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: ((context) => SettingsPage()),
+                ),
+              );
+            },
+            leading: const Icon(Icons.settings),
+            title: const Text("Setting"),
           ),
-          ListTile(
+          const ListTile(
             leading: Icon(Icons.announcement),
             title: Text('About'),
           )

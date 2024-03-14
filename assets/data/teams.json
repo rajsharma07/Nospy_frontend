@@ -1,6 +1,6 @@
 [
     {
-        "name":"yoyo",
+        "name":"SecureShiksha",
         "leader":"idli",
         "member":[
             "assets/Image/jhatu.jpg",
@@ -12,7 +12,7 @@
         "discription":"No Spy a step ahead to privacy"
     },
     {
-        "name":"yoyo",
+        "name":"NoSpy - FrontEnd",
         "leader":"idli",
         "member":[
             "assets/Image/jhatu.jpg",
@@ -24,7 +24,7 @@
         "discription":"No Spy a step ahead to privacy"
     },
     {
-        "name":"yoyo",
+        "name":"NoSpy Backend",
         "leader":"idli",
         "member":[
             "assets/Image/jhatu.jpg",
@@ -36,43 +36,7 @@
         "discription":"No Spy a step ahead to privacy"
     },
     {
-        "name":"yoyo",
-        "leader":"idli",
-        "member":[
-            "assets/Image/jhatu.jpg",
-            "assets/Image/jaaadoo.jpg",
-            "assets/Image/jhatu.jpg",
-            "assets/Image/jaaadoo.jpg",
-            "assets/Image/jaaadoo.jpg"
-        ],
-        "discription":"No Spy a step ahead to privacy"
-    },
-    {
-        "name":"yoyo",
-        "leader":"idli",
-        "member":[
-            "assets/Image/jhatu.jpg",
-            "assets/Image/jaaadoo.jpg",
-            "assets/Image/jhatu.jpg",
-            "assets/Image/jaaadoo.jpg",
-            "assets/Image/jaaadoo.jpg"
-        ],
-        "discription":"No Spy a step ahead to privacy"
-    },
-    {
-        "name":"yoyo",
-        "leader":"idli",
-        "member":[
-            "assets/Image/jhatu.jpg",
-            "assets/Image/jaaadoo.jpg",
-            "assets/Image/jhatu.jpg",
-            "assets/Image/jaaadoo.jpg",
-            "assets/Image/jaaadoo.jpg"
-        ],
-        "discription":"No Spy a step ahead to privacy"
-    },
-    {
-        "name":"yoyo",
+        "name":"MARVS",
         "leader":"idli",
         "member":[
             "assets/Image/jhatu.jpg",

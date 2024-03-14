@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+
 import 'package:nospy/model/member.dart';
 import 'package:nospy/widget/addteam/membertile.dart';
 
@@ -14,11 +14,11 @@ class AddMembers extends StatefulWidget {
 class _AddMembers extends State<AddMembers> {
   var memberidcontrol = TextEditingController();
   List<Member> m = [
-    Member(name: 'Nehal', id: '123', dsg: Designation.Member, teamid: 'asd', profile: "assets/Image/jhatu.jpg"),
-    Member(name: 'Piyush', id: '123', dsg: Designation.Member, teamid: 'asd', profile: "assets/Image/jhatu.jpg"),
-    Member(name: 'Siddhesh', id: '123', dsg: Designation.Member, teamid: 'asd', profile: "assets/Image/jhatu.jpg"),
-    Member(name: 'Atharv', id: '123', dsg: Designation.Member, teamid: 'asd', profile: "assets/Image/jhatu.jpg"),
-    Member(name: 'Raj', id: '123', dsg: Designation.Member, teamid: 'asd', profile: "assets/Image/jhatu.jpg"),
+    Member(name: 'Nehal', id: '123', dsg: Designation.Member, profile: "assets/Image/jhatu.jpg"),
+    Member(name: 'Piyush', id: '123', dsg: Designation.Member, profile: "assets/Image/jhatu.jpg"),
+    Member(name: 'Siddhesh', id: '123', dsg: Designation.Member, profile: "assets/Image/jhatu.jpg"),
+    Member(name: 'Atharv', id: '123', dsg: Designation.Member,profile: "assets/Image/jhatu.jpg"),
+    Member(name: 'Raj', id: '123', dsg: Designation.Member, profile: "assets/Image/jhatu.jpg"),
   ];
   @override
   Widget build(BuildContext context) {
